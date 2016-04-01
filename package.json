@@ -1,0 +1,22 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "processImage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkiversonlk/Aflodit-image.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lkiversonlk/Aflodit-image/issues"
+  },
+  "homepage": "https://github.com/lkiversonlk/Aflodit-image#readme",
+  "dependencies": {
+    "easyimage": "^2.1.0"
+  }
+}
