@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lkiversonlk/Aflodit-image#readme",
   "dependencies": {
-    "easyimage": "^2.1.0"
+    "easyimage": "^2.1.0",
+    "mongodb": "^2.1.14"
   }
 }
