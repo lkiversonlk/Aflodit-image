@@ -45,19 +45,19 @@ function _process(file, callback){
     }
 };
 
-function processFile(path, callback){
-    console.log("process file " + path);
-    easyimg.info(path)
+function processFile(file, callback){
+    //console.log("process file " + path);
+    easyimg.info(file)
         .then(
             function(result){
                 var wDh = result.width / result.height;
                 if(wDh > 1){
-                    console.log("file " + path + " w/d is " + wDh);
+                    console.log(path.basename(file));
                 }
                 callback();
             },
             function(error){
-                console.log("error in file " + path);
+                console.log(path.basename(file));
                 callback();
             }
         )
