@@ -52,12 +52,12 @@ function processFile(file, callback){
             function(result){
                 var wDh = result.width / result.height;
                 if(wDh > 1){
-                    console.log(path.basename(file), "size");
+                    console.log(path.basename(file)+ ",size");
                 }
                 callback();
             },
             function(error){
-                console.log(path.basename(file), "unknown");
+                console.log(path.basename(file)+ ",unknown");
                 callback();
             }
         )
