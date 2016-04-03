@@ -8,6 +8,8 @@ var config = require(path.join(process.env.HOME, ".aflodit.json"));
 
 var imageFolder = config.folder;
 var mongoUrl = config.mongo + "/" + config.database;
+
+console.log("find invalid in " + imageFolder);
 //var mongoose = require("mongoose");
 //mongoose.connect(mongoUrl);
 

@@ -12,7 +12,10 @@ var mongoUrl = "mongodb://" + config.mongo.mongourl + "/" + config.mongo.db;
 
 var readline = require("readline");
 
-console.log("use mongo " + mongoUrl);
+console.log("remvoe invalid in " + imageFolder + " with mongo " + mongoUrl);
+
+var remains = 0;
+var finished = false;
 
 client.connect(mongoUrl, function(err, db){
     if(err){
@@ -24,6 +27,7 @@ client.connect(mongoUrl, function(err, db){
     });
 
     reader.on("line", function(line){
+        remains ++;
         var info = line.split(",");
         var fild_id = info[0];
         db.collection('images').remove({file_id : fild_id}, function(err, result){
@@ -40,7 +44,16 @@ client.connect(mongoUrl, function(err, db){
                 }
 
             }
+            remains --;
+
+            if(remains == 0 && finished){
+                reader.close();
+                db.close();
+            }
         });
     });
 
+    reader.on("close", function(){
+        finished = true;
+    });
 });
